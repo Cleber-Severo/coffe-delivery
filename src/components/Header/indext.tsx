@@ -13,7 +13,7 @@ const Header = () => {
 					<span>Porto Alegre, RS</span>
 				</Location>
 				<CartBadge>
-					<ShoppingCart size={28} weight='fill' color={defaultTheme['yellow']} />
+					<ShoppingCart size={28} weight='fill' color={defaultTheme['yellow-dark']} />
 					<span>3</span>
 				</CartBadge>
 			</HeaderActions>

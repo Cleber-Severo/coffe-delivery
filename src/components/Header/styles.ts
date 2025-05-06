@@ -41,8 +41,8 @@ export const CartBadge = styled.button`
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 26px;
-		height: 26px;
+		width: 24px;
+		height: 24px;
 
 		font-weight: bold;
 		font-size: 14px;
@@ -53,7 +53,7 @@ export const CartBadge = styled.button`
 		top: -12px;
 		right: -12px;
 
-		background-color: ${(props) => props.theme['yellow']};
+		background-color: ${(props) => props.theme['yellow-dark']};
 		color: white;
 	}
 `;
