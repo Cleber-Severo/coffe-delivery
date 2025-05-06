@@ -1,12 +1,13 @@
 import Header from '../../components/Header/indext';
 import { Outlet } from 'react-router-dom';
+import { Container } from './styles';
 
 const DefaultLayout = () => {
 	return (
-		<div>
+		<Container>
 			<Header />
 			<Outlet />
-		</div>
+		</Container>
 	);
 };
 
