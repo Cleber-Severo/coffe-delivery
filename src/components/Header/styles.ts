@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.div`
-	padding: 32px 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	max-width: 1440px;
+	/* padding: 32px 0; */
+	padding: 32px 160px;
+	margin: auto;
 `;
 
 export const HeaderActions = styled.div`
