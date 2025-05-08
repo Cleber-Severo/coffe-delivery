@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import bg from '../../../assets/hero_bg.png';
+import bg from '../../../../assets/hero_bg.png';
 
 export const Wrapper = styled.div`
 	display: flex;
