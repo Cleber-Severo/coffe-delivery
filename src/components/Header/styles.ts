@@ -1,14 +1,27 @@
 import styled from 'styled-components';
+interface HeaderContainerProps {
+	$scrolled: boolean;
+}
 
-export const HeaderContainer = styled.div`
+export const Wrapper = styled.div<HeaderContainerProps>`
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	display: flex;
+	/* justify-content: center; */
+	background-color: ${({ $scrolled }) => ($scrolled ? 'white' : 'transparent')};
+	box-shadow: ${({ $scrolled }) => ($scrolled ? '0 2px 8px rgba(0, 0, 0, 0.05)' : 'none')};
+`;
+
+export const HeaderContainer = styled.div<HeaderContainerProps>`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 
-	max-width: 1440px;
-	/* padding: 32px 0; */
-	padding: 32px 160px;
+	width: 1440px;
 	margin: auto;
+	padding: ${({ $scrolled }) => ($scrolled ? '24px 160px' : '32px 160px')};
+	transition: 0.3s ease;
 `;
 
 export const HeaderActions = styled.div`
