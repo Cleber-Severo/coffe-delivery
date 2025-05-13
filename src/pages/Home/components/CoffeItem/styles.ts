@@ -20,6 +20,8 @@ export const ItemContainer = styled.div`
 
 		transform: translateY(-38%);
 		margin-bottom: -36px;
+
+		user-select: none;
 	}
 
 	h4 {
@@ -118,11 +120,11 @@ export const AmountActions = styled.div`
 
 	svg {
 		border: none;
-		color: ${(props) => props.theme['purple']};
+		color: ${(props) => props.theme['purple-dark']};
 
 		&:hover {
 			cursor: pointer;
-			color: ${(props) => props.theme['purple-dark']};
+			color: ${(props) => props.theme['purple']};
 		}
 	}
 `;
