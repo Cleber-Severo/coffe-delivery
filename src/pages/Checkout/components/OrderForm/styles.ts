@@ -19,12 +19,14 @@ type InputWrapperProps = {
 
 export const InputWrapper = styled.div<InputWrapperProps>`
   grid-column: span ${({ colSpan }) => colSpan};
+  margin-bottom: 1rem;
 `
 
-export const Input = styled.input`
+export const Input = styled.input<{ hasError?: boolean }>`
   background-color: ${({ theme }) => theme["base-input"]};
   color: ${({ theme }) => theme["base-label"]};
-  border: 1px solid ${({ theme }) => theme["base-hover"]};
+  border: 1px solid
+    ${({ theme, hasError }) => (hasError ? 'red' : theme["base-hover"])};
   border-radius: 4px;
 
   padding: 12px;
@@ -38,4 +40,17 @@ export const Input = styled.input`
     line-height: 130%;
     font-weight: 400;
   }
+
+  &:focus {
+    border-color: ${({ hasError, theme }) =>
+      hasError ? 'red' : theme["yellow-dark"]};
+    outline: none;
+  }
+`
+
+export const ErrorText = styled.span`
+  color: red;
+  font-size: 0.75rem;
+  margin-top: 4px;
+  display: block;
 `

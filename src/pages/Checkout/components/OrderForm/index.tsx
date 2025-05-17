@@ -8,14 +8,15 @@ import Payment from '../Payment'
 import { useEffect } from 'react'
 
 const OrderForm = () => {
-  const { register, setValue, watch, } = useFormContext()
+  const { register, setValue, watch, formState: { errors } } = useFormContext()
 
-
-
-  // Watch the raw CEP value
   const rawCep = watch("cep")
 
-  // Apply the mask on change
+  const ErrorMessage = ({ message }: { message?: string }) => {
+    if (!message) return null
+    return <span style={{ color: 'red', fontSize: '0.75rem' }}>{message}</span>
+  }
+
   useEffect(() => {
     const onlyDigits = rawCep?.replace(/\D/g, "")
     const masked = onlyDigits?.replace(/^(\d{5})(\d{0,3})/, "$1-$2")
@@ -37,34 +38,47 @@ const OrderForm = () => {
 
         <FormGrid>
           <InputWrapper colSpan={5}>
-            <Input id='cep' placeholder="CEP" {...register('cep')} />
+            <Input id='cep' placeholder="CEP" {...register('cep')}   hasError={!!errors.cep} />
+            <ErrorMessage message={errors.cep?.message as string} />
           </InputWrapper>
         </FormGrid>
 
         <FormGrid>
           <InputWrapper colSpan={12}>
-            <Input id='rua' placeholder="Rua" {...register('rua')} />
+            <Input id='rua' placeholder="Rua" {...register('rua')}   hasError={!!errors.rua} />
+            <ErrorMessage message={errors.rua?.message as string} />
+
           </InputWrapper>
         </FormGrid>
 
         <FormGrid>
           <InputWrapper colSpan={5}>
-            <Input id='numero' placeholder="Número" {...register('numero')} />
+            <Input id='numero' placeholder="Número" {...register('numero')}   hasError={!!errors.numero} />
+            <ErrorMessage message={errors.numero?.message as string} />
+
           </InputWrapper>
           <InputWrapper colSpan={7}>
-            <Input id='complemento' placeholder="Complemento" {...register('complemento')} />
+            <Input id='complemento' placeholder="Complemento" {...register('complemento')}   hasError={!!errors.complemento} />
+            <ErrorMessage message={errors.complemento?.message as string} />
+
           </InputWrapper>
         </FormGrid>
 
         <FormGrid>
           <InputWrapper colSpan={5}>
-            <Input id='bairro' placeholder="Bairro" {...register('bairro')} />
+            <Input id='bairro' placeholder="Bairro" {...register('bairro')}   hasError={!!errors.bairro} />
+            <ErrorMessage message={errors.bairro?.message as string} />
+
           </InputWrapper>
           <InputWrapper colSpan={5}>
-            <Input id='cidade' placeholder="Cidade" {...register('cidade')} />
+            <Input id='cidade' placeholder="Cidade" {...register('cidade')}   hasError={!!errors.cidade} />
+            <ErrorMessage message={errors.cidade?.message as string} />
+
           </InputWrapper>
           <InputWrapper colSpan={2}>
-            <Input id='uf' placeholder="UF" {...register('uf')} />
+            <Input id='uf' placeholder="UF" {...register('uf')}   hasError={!!errors.uf} />
+            <ErrorMessage message={errors.uf?.message as string} />
+
           </InputWrapper>
         </FormGrid>
       </Card>
