@@ -7,6 +7,8 @@ interface ICartContext {
   setCartList: (newItem: ICartItem) => void
   cartItemsAmount: number
   cartItems: ICoffe[]
+  increaseItemAmount: (coffeId: string) => void
+  decreaseItemAmount: (coffeId: string) => void
 }
 
 export const CartContext = createContext({} as ICartContext)
@@ -34,8 +36,33 @@ function setCartList(newItem: ICartItem) {
   setCartItems(updatedCart);
 }
 
+function increaseItemAmount (coffeId: string) {
+  const newCartItem = cartItems.map(item => {
+    if(item.id === coffeId){
+      return {...item, amount: item.amount + 1}
+    }
+
+    return item
+  })
+
+
+  setCartItems(newCartItem)
+}
+function decreaseItemAmount (coffeId: string) {
+  const newCartItem = cartItems.map(item => {
+    if(item.id === coffeId){
+      return {...item, amount: item.amount > 0 ? item.amount - 1 : 0}
+    }
+
+    return item
+  })
+
+
+  setCartItems(newCartItem)
+}
+
   return (
-    <CartContext.Provider value={{ cartItems, cartItemsAmount, setCartList }} >
+    <CartContext.Provider value={{ cartItems, cartItemsAmount, setCartList, increaseItemAmount, decreaseItemAmount }} >
       {children}
     </CartContext.Provider>
   )

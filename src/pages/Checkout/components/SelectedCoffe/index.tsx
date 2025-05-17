@@ -8,7 +8,7 @@ import { defaultTheme } from '../../../../styles/themes/default'
 import { parseCurrency } from '../../../../utils/parseCurrency'
 
 const SelectedCoffe = () => {
-  const { cartItems } = useContext(CartContext)
+  const { cartItems, increaseItemAmount, decreaseItemAmount } = useContext(CartContext)
 
   return (
     <SelectedCoffeContainer>
@@ -22,16 +22,16 @@ const SelectedCoffe = () => {
               <ItemContainer>
                 <ItemDescription>
                   <span>{cart.title}</span>
-                  <span>{parseCurrency(cart.price)}</span>
+                  <span>{parseCurrency(String(Number(cart.price) * Number(cart.amount)))}</span>
                 </ItemDescription>
                 <CoffeItem>
                   <BaseBtnContainer>
                     <AmountActionsItem>
-                      <button onClick={() => { }}>
+                      <button type='button' onClick={() => decreaseItemAmount(cart.id)}>
                         <Minus size={18} />
                       </button>
                       <span>{cart.amount}</span>
-                      <button onClick={() => { }}>
+                      <button type='button' onClick={() => increaseItemAmount(cart.id)}>
                         <Plus size={18} />
                       </button>
                     </AmountActionsItem>

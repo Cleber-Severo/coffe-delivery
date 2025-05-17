@@ -5,6 +5,7 @@ import { AmountActions, BuyContainer, ItemContainer, Price, Tags } from "./style
 import { Minus, Plus } from "phosphor-react";
 import { CartContext } from "../../../../contexts/CartContext";
 import { parseCurrency } from "../../../../utils/parseCurrency";
+import { v4 as uuidv4 } from 'uuid';
 
 const CoffeItem = ({ title, description, url, price, tags }: ICoffe) => {
   const [coffeAmount, setCoffeAmount] = useState(1);
@@ -12,7 +13,7 @@ const CoffeItem = ({ title, description, url, price, tags }: ICoffe) => {
   const { setCartList } = useContext(CartContext);
 
   const updateCart = () => {
-    setCartList({ title, description, url, price, tags, amount: coffeAmount });
+    setCartList({ title, description, url, price, tags, amount: coffeAmount, id: uuidv4()});
     setCoffeAmount(1);
   };
 

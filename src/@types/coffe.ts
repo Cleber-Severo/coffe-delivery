@@ -4,7 +4,7 @@ export interface ICoffe {
 	price: string;
 	tags: string[];
 	url: string;
-	id?: number;
+	id: string;
   amount?: number;
 }
 
