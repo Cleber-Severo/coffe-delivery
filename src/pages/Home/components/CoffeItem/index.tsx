@@ -4,19 +4,12 @@ import CartButton from "../CartButton";
 import { AmountActions, BuyContainer, ItemContainer, Price, Tags } from "./styles";
 import { Minus, Plus } from "phosphor-react";
 import { CartContext } from "../../../../contexts/CartContext";
+import { parseCurrency } from "../../../../utils/parseCurrency";
 
 const CoffeItem = ({ title, description, url, price, tags }: ICoffe) => {
   const [coffeAmount, setCoffeAmount] = useState(1);
 
   const { setCartList } = useContext(CartContext);
-
-  const parseCurrency = (value: string): string | 0 =>
-    isNaN(parseFloat(value))
-      ? 0
-      : parseFloat(parseFloat(value).toFixed(2)).toLocaleString("pt-BR", {
-          style: "currency",
-          currency: "BRL",
-        });
 
   const updateCart = () => {
     setCartList({ title, description, url, price, tags, amount: coffeAmount });

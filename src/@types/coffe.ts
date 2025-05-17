@@ -5,6 +5,7 @@ export interface ICoffe {
 	tags: string[];
 	url: string;
 	id?: number;
+  amount?: number;
 }
 
 export interface ICartItem extends ICoffe {
