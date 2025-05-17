@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const FormContainer = styled.form`
 	display: flex;
+  align-items: flex-start;
   gap: 32px;
 
 	padding: 20px 160px;

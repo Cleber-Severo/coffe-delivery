@@ -12,6 +12,7 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const { cartItemsAmount } = useContext(CartContext);
+  console.log(" Header ~ cartItemsAmount:", cartItemsAmount)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,7 +34,7 @@ const Header = () => {
             <MapPin size={28} weight="fill" color={defaultTheme.purple} />
             <span>Porto Alegre, RS</span>
           </Location>
-          <CartBadge>
+          <CartBadge disabled={cartItemsAmount === 0}>
             <Link to="/checkout">
               <ShoppingCart size={28} weight="fill" color={defaultTheme["yellow-dark"]} />
               <span>{cartItemsAmount}</span>
