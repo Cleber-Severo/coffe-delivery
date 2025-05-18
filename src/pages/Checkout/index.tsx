@@ -6,6 +6,9 @@ import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import OrderForm from './components/OrderForm';
 import SelectedCoffe from './components/SelectedCoffe';
+import { useNavigate } from 'react-router-dom';
+import { CartContext } from '../../contexts/CartContext';
+import { useContext } from 'react';
 
 const checkoutFormSchema = zod.object({
   cep: zod.string().min(1, 'Campo Obrigatório'),
@@ -18,9 +21,13 @@ const checkoutFormSchema = zod.object({
   paymentMethod: zod.string().min(1, 'Selecione ao menos um método de pagamento')
 })
 
-type CheckoutFormData = zod.infer<typeof checkoutFormSchema>
+export type CheckoutFormData = zod.infer<typeof checkoutFormSchema>
 
 const Checkout = () => {
+  const navigate = useNavigate()
+
+  const { setOrder } = useContext(CartContext)
+
   const checkoutForm = useForm<CheckoutFormData>({
     resolver: zodResolver(checkoutFormSchema),
     defaultValues: {
@@ -38,7 +45,8 @@ const Checkout = () => {
   const { handleSubmit } = checkoutForm
 
   const handleCheckoutSubmit = (payment: CheckoutFormData) => {
-    console.log(" handleCheckoutSubmit ~ payment:", payment)
+    setOrder(payment)
+    navigate('/success')
   }
 
   return (

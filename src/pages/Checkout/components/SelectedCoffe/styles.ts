@@ -133,6 +133,7 @@ export const ConfirmOrderButton = styled.button`
   border: none;
   border-radius: 6px;
   text-transform: uppercase;
+  cursor: pointer;
   flex: 1;
   
   padding: 12px;

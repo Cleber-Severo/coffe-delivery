@@ -2,15 +2,18 @@
 
 import { createContext, ReactNode, useState } from "react";
 import { ICartItem, ICoffe } from "../@types/coffe";
+import { CheckoutFormData } from "../pages/Checkout";
 
 interface ICartContext {
   setCartList: (newItem: ICartItem) => void
   cartItemsAmount: number
   cartItemsTotalValue: number
   cartItems: ICoffe[]
+  orderDetails: CheckoutFormData
   increaseItemAmount: (coffeId: string) => void
   decreaseItemAmount: (coffeId: string) => void
   removeCoffe: (coffeId: string) => void
+  setOrder: (order: CheckoutFormData) => void
 }
 
 export const CartContext = createContext({} as ICartContext)
@@ -21,6 +24,16 @@ interface CartContextProviderProps {
 
 export function CartContextProvider({ children }: CartContextProviderProps) {
   const [cartItems, setCartItems] = useState<ICartItem[]>([])
+  const [orderDetails, setOrderDetails] = useState<CheckoutFormData>({
+    cep: '',
+    rua: '',
+    numero: 0,
+    complemento: '',
+    bairro: '',
+    cidade: '',
+    uf: '',
+    paymentMethod: 'credito'
+  })
 
   const cartItemsAmount = cartItems.reduce((acc, current) => {
     return acc = acc + current.amount
@@ -40,6 +53,10 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
       : [...cartItems, newItem];
 
     setCartItems(updatedCart);
+  }
+
+  function setOrder(order: CheckoutFormData) {
+    setOrderDetails(order)
   }
 
   function increaseItemAmount(coffeId: string) {
@@ -83,7 +100,9 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         increaseItemAmount,
         decreaseItemAmount,
         cartItemsTotalValue,
-        removeCoffe
+        removeCoffe,
+        orderDetails,
+        setOrder
       }}
     >
       {children}
