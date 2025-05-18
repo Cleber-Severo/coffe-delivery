@@ -20,6 +20,11 @@ type InputWrapperProps = {
 export const InputWrapper = styled.div<InputWrapperProps>`
   grid-column: span ${({ colSpan }) => colSpan};
   margin-bottom: 1rem;
+
+  span {
+    margin-top: -0.5rem;
+    display: block;
+  }
 `
 
 export const Input = styled.input<{ hasError?: boolean }>`

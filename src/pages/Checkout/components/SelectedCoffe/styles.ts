@@ -19,6 +19,12 @@ export const CoffeItem = styled.div`
   }
 `
 
+export const ListWrapper = styled.div`
+  max-height: 400px;
+  overflow-y: auto;
+
+`
+
 export const ItemContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -98,4 +104,40 @@ export const Separator = styled.hr`
   height: 1px;
   background-color: ${(props) => props.theme['base-button']};
   margin: 12px 0;
+`
+
+export const ResumeTextContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
+export const ResumeText = styled.span`
+  color: ${(props) => props.theme['base-text']};
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 400;
+`
+
+export const ResumeTitle = styled.span`
+  color: ${(props) => props.theme['base-subtitle']};
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  `
+
+export const ConfirmOrderButton = styled.button`
+  color: ${(props) => props.theme['white']};
+  background-color: ${(props) => props.theme['yellow']};
+
+  border: none;
+  border-radius: 6px;
+  text-transform: uppercase;
+  flex: 1;
+  
+  padding: 12px;
+
+  font-size: 14px;
+  line-height: 160%;
+  font-weight: bold;
 `
