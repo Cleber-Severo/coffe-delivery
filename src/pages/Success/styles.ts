@@ -8,6 +8,10 @@ export const Container = styled.div`
 	padding: 80px 160px;
 	width: 1440px;
 	margin: 0 auto;
+
+  img {
+    margin-bottom: -0.6rem;
+  }
 `;
 
 
@@ -29,7 +33,7 @@ export const SubTitle = styled.h1`
   margin-bottom: 40px;
   `
 export const Card = styled.div`
-    padding: 2px;
+    padding: 1px;
 
     border-radius: 6px 40px 6px 40px;
     background: linear-gradient(90deg, ${({ theme }) => theme.yellow}, ${({ theme }) => theme.purple});
