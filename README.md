@@ -14,7 +14,7 @@ A modern Coffee Delivery e-commerce built with React, TypeScript, and styled-com
 
 - [x] Checkout
 
-= [x] View order confirmation page
+- [x] View order confirmation page
 
 🚀 Technologies Used
 
@@ -61,7 +61,7 @@ This project is licensed under the MIT License. Feel free to use and modify it!
 Developed with ❤️ by Cléber Severo 🚀
 
 
-## Coffee Delivery Português
+## Coffee Delivery Portugues
 
 Um e-commerce moderno de entrega de cafés desenvolvido com React, TypeScript e styled-components. Inclui página inicial, lista de produtos, checkout com formulários de endereço e pagamento, e página de sucesso.
 
