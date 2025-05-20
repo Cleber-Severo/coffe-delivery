@@ -1,5 +1,3 @@
-## Todo App
-
 [🇬🇧 English](#coffee-delivery-english) | [🇧🇷 Português](#coffee-delivery-portugues)
 
 ---
