@@ -18,22 +18,21 @@ A modern Coffee Delivery e-commerce built with React, TypeScript, and styled-com
 
 🚀 Technologies Used
 
-[![My Skills](https://skillicons.dev/icons?i=ts,react,styledComponents)](https://skillicons.dev) 
+[![My Skills](https://skillicons.dev/icons?i=ts,react,styledComponents)](https://skillicons.dev)
 
 📸 Demo
 
-📍 Home Page
+📍 Home Page <br>
 <img width=70% textAlign="center" src="./public/screenshots/home.png" alt="home page">
 
-🛒 Product Listing & Cart
+🛒 Product Listing & Cart <br>
 <img width=70% textAlign="center" src="./public/screenshots/coffe-list.png" alt="product list">
 
-📦 Checkout Form (Address + Payment)
+📦 Checkout Form (Address + Payment) <br>
 <img width=70% textAlign="center" src="./public/screenshots/checkout.png" alt="checkout">
 
-🎉 Success Page
+🎉 Success Page <br>
 <img width=70% textAlign="center" src="./public/screenshots/success.png" alt="success page">
-
 
 🔧 How to Run the Project
 
@@ -46,6 +45,7 @@ Navigate to the project folder:
 cd ./coffe-delivery
 
 Install dependencies:
+
 ```
 npm install
 
@@ -60,12 +60,12 @@ This project is licensed under the MIT License. Feel free to use and modify it!
 
 Developed with ❤️ by Cléber Severo 🚀
 
-
 ## Coffee Delivery Portugues
 
 Um e-commerce moderno de entrega de cafés desenvolvido com React, TypeScript e styled-components. Inclui página inicial, lista de produtos, checkout com formulários de endereço e pagamento, e página de sucesso.
 
 📌 Funcionalidades
+
 - [x] Navegar por uma lista de cafés
 
 - [x] Preencher formulário de endereço
@@ -76,20 +76,20 @@ Um e-commerce moderno de entrega de cafés desenvolvido com React, TypeScript e 
 
 🚀 Tecnologias Utilizadas
 
-[![My Skills](https://skillicons.dev/icons?i=ts,react,styledComponents)](https://skillicons.dev) 
+[![My Skills](https://skillicons.dev/icons?i=ts,react,styledComponents)](https://skillicons.dev)
 
 📸 Demonstração
 
-📍 Página Inicial
+📍 Página Inicial <br>
 <img width=70% textAlign="center" src="./public/screenshots/home.png" alt="página inicial">
 
-🛒 Lista de Produtos e Carrinho
+🛒 Lista de Produtos e Carrinho <br>
 <img width=70% textAlign="center" src="./public/screenshots/coffe-list.png" alt="lista de produtos">
 
-📦 Formulário de Checkout (Endereço + Pagamento)
+📦 Formulário de Checkout (Endereço + Pagamento) <br>
 <img width=70% textAlign="center" src="./public/screenshots/checkout.png" alt="checkout">
 
-🎉 Página de Sucesso
+🎉 Página de Sucesso <br>
 <img width=70% textAlign="center" src="./public/screenshots/success.png" alt="sucesso">
 
 🔧 Como Rodar o Projeto
@@ -103,6 +103,7 @@ Acesse a pasta do projeto:
 cd todo-app
 
 Instale as dependências:
+
 ```
 npm install
 
